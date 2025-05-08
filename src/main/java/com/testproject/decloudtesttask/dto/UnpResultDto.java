@@ -1,12 +1,11 @@
 package com.testproject.decloudtesttask.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+
 
 import java.util.List;
 
-@Setter
-@Getter
+@Data
 public class UnpResultDto {
     private List<String> individuals;
     private List<String> unp;
@@ -15,5 +14,4 @@ public class UnpResultDto {
         this.individuals = individuals;
         this.unp = unp;
     }
-
 }

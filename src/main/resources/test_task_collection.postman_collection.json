@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "3bc34448-a5b6-4b5c-ae75-cf348077a08b",
+		"name": "test_task_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31186923",
+		"_collection_link": "https://api777-2725.postman.co/workspace/becloud_test_task~74360ece-35e0-4504-9aa9-841c6808ce08/collection/31186923-3bc34448-a5b6-4b5c-ae75-cf348077a08b?action=share&source=collection_link&creator=31186923"
+	},
+	"item": [
+		{
+			"name": "process-and-save-domains",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/ivandolgolaptev/Downloads/domains.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/unp/process-and-save-domains",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"unp",
+						"process-and-save-domains"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "process-domains",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"contentType": "",
+							"type": "file",
+							"src": "/Users/ivandolgolaptev/Downloads/domains.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/unp/process-domains",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"unp",
+						"process-domains"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

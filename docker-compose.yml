@@ -1,0 +1,46 @@
+version: "3.7"
+
+networks:
+  becloud:
+    name: docker_becloud
+    external: true
+    driver: bridge
+
+services:
+
+  app:
+    build:
+      context: .
+    container_name: krainet-test-task
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+    networks:
+      - becloud
+    ports:
+      - 8082:8082
+    mem_limit: 512g
+    mem_reservation: 256m
+
+  db:
+    image: postgres:16
+    container_name: db
+    restart: always
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    networks:
+      - becloud
+    ports:
+      - 5433:5432
+    mem_limit: 512g
+    mem_reservation: 256m
+
+volumes:
+  postgres-data: { }

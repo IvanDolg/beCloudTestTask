@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS individuals
+(
+    id        BIGSERIAL PRIMARY KEY,
+    full_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS unp_records
+(
+    id  BIGSERIAL PRIMARY KEY,
+    unp VARCHAR(255) NOT NULL UNIQUE
+);
